@@ -16,7 +16,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+  <div id="nav1" class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
     <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">For Depression</a>
@@ -25,7 +25,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+  <div id="nav2" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
     <a href="#" class="w3-bar-item w3-button w3-padding-large">For Depression</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Young Men</a>
     <a href="#" class="w3-bar-item w3-button w3-padding-large">Fatty Liver</a>
@@ -91,43 +91,70 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleMenu() {
-  var x = document.getElementById("navDemo");
+  var x = document.getElementById("nav2");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
   } else {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+function initNavButtons(linkNames){
+  var links1 = document.querySelectorAll("#nav1 a");
+  var links2 = document.querySelectorAll("#nav2 a");
+  links1[2].innerText = linkNames[0];
+  links1[3].innerText = linkNames[1];
+  links1[4].innerText = linkNames[2];
+
+  links2[0].innerText = linkNames[0];
+  links2[1].innerText = linkNames[1];
+  links2[2].innerText = linkNames[2];
+}
+//replaces text in certain sections
 function initText(section, titleTxt, descriptionTxt, bodyTxt) {
-  console.log('replace text ran');
-  var titleEl = document.querySelector(section+' h1');
-  var descriptionEl = document.querySelector(section+' h5');
-  var bodyEl = document.querySelector(section+' p');
+  console.log("replace text ran");
+  var titleEl = document.querySelector(section+" h1");
+  var descriptionEl = document.querySelector(section+" h5");
+  var bodyEl = document.querySelector(section+" p");
   //first paragraph text
   titleEl.innerText = titleTxt;
   descriptionEl.innerText = descriptionTxt;
   bodyEl.innerText = bodyTxt;
 }
+function initQuote(qText){
+  var qEl = document.querySelector("#quote");
+  qEl.innerText = qText;
+}
+
+initNavButtons(new Array(
+                "For Depression",
+                "Life Direction Coaching",
+                "Fatty Liver Disease")
+              );
 initText( "#section1",
           "Will Power Doesn't Work",
+
           "We've all heard the Nike ad. Just do it. And yet after decades of advertising "+
           "60% of Americans are Obese. Will power doesn't work. It is time for a new approach.",
+
+          "We start with asking why do you wan't to make changes in your life? "+
           "Coaching uses psychological techniques that help stimulate a person's motivation. "+
-          "Why Power coaches are trained in an evidence based technique called Motivational Interviewing (MI). "+
+          "Why Power Coaches are trained in an evidence based technique called Motivational Interviewing (MI). "+
           "It's effectiveness has been validated in 200 randomized control studies. "+
           "Randomized control studies are the highest quality evidence science has to offer. "
         );
 initText( "#section2",
           "What We Do",
+
           "We specialize in parents and their sixteen to early-twenties sons "+
           "with Life Direction Coaching, People suffering from depression, "+
           "and People diagnosed with Fatty Liver Disease. "+
           "Click the links in the menu bar for more information",
+
           "Good coaches interrupt unproductive thought patterns. "+
           "They help you creatively explore and unearth your deepest motivations. "+
           "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone."
         );
-
+initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");
 </script>
 
 </body>

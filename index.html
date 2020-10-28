@@ -102,14 +102,13 @@ function toggleMenu() {
 }
 function loadContent(json){
 
-  if (json.isShow && !document.body.contains(header)){
+  if (json.header.isShow && !document.body.contains(header)){
     topnav.after(header);
-  } else if (document.body.contains(header)) {
+  } else if (!json.header.isShow && document.body.contains(header)) {
     header.remove();
   }
-  if (json.isShow){
-    header.querySelector('h1').innerText = json.header.h;
-    header.querySelector('p').innerText = json.header.p;
+  if (json.header.isShow){
+    initHeader(json.header.h, json.header.p, json.header.l);
   }
   //json.header.h
   //json.header.p
@@ -139,6 +138,11 @@ function initNavButtons(linkNames){
     links2[n].innerText = linkNames[n];
   }
 }
+//update Header
+function initHeader(h, p, l){
+  header.querySelector('h1').innerText = h;
+  header.querySelector('p').innerText = p;
+}
 //replaces text in certain sections
 function initText(section, titleTxt, descriptionTxt, bodyTxt) {
   console.log("replace text ran");
@@ -160,7 +164,7 @@ function setHomeContent(){
   if (!document.body.contains(header)){
     topnav.after(header);
   }
-  console.log("set home content");
+  initHeader('"Why Power Coaching LLC"',"You don't need WILL Power, you need WHY power.", "");
   initText( "#section1",
             "Will Power Doesn't Work",
 

@@ -1,0 +1,19 @@
+{
+  "header":{
+    "isShow":true,
+    "h":"Life Direction Coaching",
+    "p":"",
+    "link":""
+  },
+  "sections":[
+    {
+      "h":"HEADER",
+      "d":"description",
+      "p":"main text"},
+    {
+      "h":"HEADER2",
+      "d":"description2",
+      "p":"main text 2"
+  }],
+  "quote":"Do what you can, with what you have, where you are. – Theodore Roosevelt"
+}

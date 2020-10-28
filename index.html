@@ -89,6 +89,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </footer>
 
 <script>
+var topnav = document.querySelector("#topnav");
 var header = document.querySelector("header");
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleMenu() {
@@ -100,6 +101,16 @@ function toggleMenu() {
   }
 }
 function loadContent(json){
+
+  if (json.isShow && !document.body.contains(header)){
+    topnav.after(header);
+  } else if (document.body.contains(header)) {
+    header.remove();
+  }
+  if (json.isShow){
+    header.querySelector('h1').innerText = json.header.h;
+    header.querySelector('p').innerText = json.header.p;
+  }
   //json.header.h
   //json.header.p
   initText("#section1", json.sections[0].h, json.sections[0].d, json.sections[0].p);
@@ -144,7 +155,7 @@ function initQuote(qText){
   qEl.innerText = qText;
 }
 function setHomeContent(){
-  var topnav = document.querySelector("#topnav");
+
 
   if (!document.body.contains(header)){
     topnav.after(header);

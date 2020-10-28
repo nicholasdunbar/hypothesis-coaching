@@ -99,18 +99,22 @@ function toggleMenu() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
-function loadContent(fileName){
-  var baseURL = "https://nicholasdunbar.github.io/why-power-coaching/";
-  fetch(baseURL+fileName)
-  .then(function(response){return response.json()})
-  .then(function(json){console.log(json); header.remove();});
+function loadContent(json){
+  //json.header.h
+  //json.header.p
+  initText("#section1", json.sections[0].h, json.sections[0].d, json.sections[0].p);
+  initText("#section2", json.sections[1].h, json.sections[1].d, json.sections[1].p);
+  initQuote(json.quote);
 }
 function initNavButtons(linkNames){
   var links1 = document.querySelectorAll("#nav1 a");
   var links2 = document.querySelectorAll("#nav2 a");
+  var baseURL = "https://nicholasdunbar.github.io/why-power-coaching/";
   function getContentFn(i){
     return function(){
-      loadContent(i+"-content.json");
+      fetch(baseURL+i+"-content.json")
+      .then(function(response){return response.json()})
+      .then(loadContent);
     }
 
   }

@@ -3,14 +3,15 @@
     "h":"Health Coaching for Depression",
     "p":""
   },
-  "section1":{
-    "h":"HEADER",
-    "d":"description",
-    "p":"main text"
-  },
-  "section2":{
-    "h":"HEADER2",
-    "d":"description2",
-    "p":"main text 2"
-  }
+  "sections":[
+    {
+      "h":"HEADER",
+      "d":"description",
+      "p":"main text"},
+    {
+      "h":"HEADER2",
+      "d":"description2",
+      "p":"main text 2"
+  }],
+  "quote":"Do what you can, with what you have, where you are. – Theodore Roosevelt"
 }

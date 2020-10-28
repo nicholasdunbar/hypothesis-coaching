@@ -100,7 +100,8 @@ function toggleMenu() {
   }
 }
 function loadContent(fileName){
-  fetch(fileName)
+  var baseURL = "https://raw.githubusercontent.com/nicholasdunbar/why-power-coaching/main/";
+  fetch(baseURL+fileName)
   .then(function(response){return response.json()})
   .then(function(json){console.log(json); header.remove();});
 }

@@ -2,18 +2,23 @@
   "header":{
     "isShow":true,
     "h":"Health Coaching for Depression",
-    "p":"",
+    "p":"Schedule a free 15-minute consultation",
     "link":""
   },
   "sections":[
     {
-      "h":"HEADER",
-      "d":"description",
-      "p":"main text"},
+      "h":"A happy body supports a happy mind",
+      "d":"I’ll help you fight depression by guiding you to improve your physical health, to access your motivation, and to get organized. ",
+      "p":"It's hard to get motivated when you're depressed or anxious – seriously hard. One reason I became a health coach is because I’ve been there too, and along with therapy, coaching really helped me to overcome depression."},
     {
-      "h":"HEADER2",
-      "d":"description2",
-      "p":"main text 2"
-  }],
-  "quote":"Do what you can, with what you have, where you are. – Theodore Roosevelt"
+      "h":"Small goals lead to big changes",
+      "d":"Not ready to work on your health just yet? That’s ok. Just getting something done, no matter how small, is one of the keys to fighting depression.",
+      "p":"Coaching can help break the stagnation and start to nudge you toward action. What have you been feeling stuck about? Together, we can start taking steps."
+    },
+    {
+      "h":"HEADER3",
+      "d":"description3",
+      "p":"main text 3"
+    }],
+  "quote":"He who has a why to live for can bear almost any how. – Friedrich Nietzsche"
 }

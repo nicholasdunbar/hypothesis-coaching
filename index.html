@@ -129,14 +129,17 @@ function loadContent(json){
   for (var i = 0; i < json.sections.length; i++){
     n = i+1;
     section = document.querySelector("#section"+n);
-    if(!document.body.contains(section)){
+    if(document.body.contains(section)){
+      sectionLast = section;
+    } else {
       //add section
       sectionClone = sectionTemplate.cloneNode(true);
       sectionClone.setAttribute("id", "section"+n);
       sectionLast.after(sectionClone);
+      sectionLast = sectionClone;
     }
     initText("#section"+n, json.sections[i].h, json.sections[i].d, json.sections[i].p);
-    sectionLast = section;
+
   }
   clearSectionsAfter(++n);
 
@@ -188,7 +191,7 @@ function initText(section, titleTxt, descriptionTxt, bodyTxt) {
   //first paragraph text
   titleEl.innerText = titleTxt;
   descriptionEl.innerText = descriptionTxt;
-  bodyEl.innerText = bodyTxt;
+  bodyEl.innerHTML = bodyTxt;
 }
 function initQuote(qText){
   var qEl = document.querySelector("#quote");

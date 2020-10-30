@@ -103,8 +103,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 var topnav = document.querySelector("#topnav");
 var header = document.querySelector("header");
 var sectionTemplate = document.querySelector("#section3");
-var numSections = 2;
-sectionTemplate.remove();
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleMenu() {
   var x = document.getElementById("nav2");
@@ -132,14 +131,14 @@ function loadContent(json){
     section = document.querySelector("#section"+n);
     if(!document.body.contains(section)){
       //add section
-      sectionClone = sectionTemplate.cloneNone(true);
-      sectionClone.id = "#section"+n;
+      sectionClone = sectionTemplate.cloneNode(true);
+      sectionClone.setAttribute("id", "section"+n);
       sectionLast.after(sectionClone);
     }
     initText("#section"+n, json.sections[i].h, json.sections[i].d, json.sections[i].p);
     sectionLast = section;
   }
-
+  clearSectionsAfter(++n);
 
   initQuote(json.quote);
 }
@@ -170,6 +169,16 @@ function initHeader(h, p, l){
   header.querySelector('h1').innerText = h;
   header.querySelector('p').innerText = p;
 }
+//remove sections after n
+function clearSectionsAfter(n){
+  //clear unnecessary sections
+  section = document.querySelector("#section"+n);
+  while(document.body.contains(section)){
+    section.remove();
+    n++;
+    section = document.querySelector("#section"+n);
+  }
+}
 //replaces text in certain sections
 function initText(section, titleTxt, descriptionTxt, bodyTxt) {
   console.log("replace text ran");
@@ -192,6 +201,7 @@ function setHomeContent(){
     topnav.after(header);
   }
   initHeader('"Why Power Coaching LLC"',"You don't need WILL Power, you need WHY power.", "");
+  clearSectionsAfter(3);
   initText( "#section1",
             "Will Power Doesn't Work",
 

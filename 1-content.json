@@ -7,13 +7,23 @@
   },
   "sections":[
     {
-      "h":"HEADER",
-      "d":"description",
-      "p":"main text"},
+      "h":"Is your son looking for his true north?",
+      "d":"Are you worried about your 16-to-25-year-old son’s lack of direction? Maybe, you want to help him choose a degree, a career, or something else but will he listen to you?",
+      "p":"In the late-teens and early-twenties it is normal for young adults to be unsure of what to do with their lives. It’s a big decision. They are growing up and that means they are listening to you less. That's a good thing, but it makes it hard to support them. That’s where coaching from someone neutral and outside the family can be useful."},
     {
-      "h":"HEADER2",
-      "d":"description2",
-      "p":"main text 2"
-  }],
+      "h":"How does life-direction coaching work?",
+      "d":"I help young men start planning the beginning of their adult lives by getting them in touch with their values, motivation, and purpose. I prompt them out of apathy and into action and exploration. ",
+      "p":"Your son sets the goals, and the coach uses a variety of psychological techniques to stimulate his motivation. One such technique I use is Motivational Interviewing (MI) which has been proven effective in 200 randomized controlled trials. The world's top performers, such as professional athletes, CEOs, and artists use it. Why not your son?"
+    },
+    {
+      "h":"How is coaching different from career counseling?",
+      "d":"Coaching is different from career counseling. Sessions don't start with “what do you want to do with your life?” but “what is important to you?”",
+      "p":"A coach is not an authority figure or an expert in occupations. He is an equal partner that facilitates thinking, instead of your son the answers. He helps your son overcome the mental blocks preventing action.  Life-direction is beyond career or education, it's about discovering what kind of life your son wants to live and what kind of adult he wants to become."
+    },
+    {
+      "h":"Are you doing everything you can for him?",
+      "d":"Health coaching can improve the likelihood a young man will choose a degree in college, explore potential careers, and pursue their chosen path with more confidence.",
+      "p":""
+    }],
   "quote":"Do what you can, with what you have, where you are. – Theodore Roosevelt"
 }

@@ -3,7 +3,7 @@
     "isShow":true,
     "h":"Non-Alcoholic Fatty Liver Disease",
     "p":"Schedule a free 15-minute consultation",
-    "link":""
+    "link":"https://forms.gle/zi1pgjQTtABAdTNN9"
   },
   "sections":[
     {
@@ -13,7 +13,7 @@
     {
       "h":"HEADER2",
       "d":"description2",
-      "p":"main text 2"
+      "p":"Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a>"
   }],
   "quote":"The body is everything. – Anonymous"
 }

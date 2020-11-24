@@ -1,8 +1,8 @@
 {
   "header":{
     "isShow":true,
-    "h":"Fatty Liver Disease",
-    "p":"",
+    "h":"Non-Alcoholic Fatty Liver Disease",
+    "p":"Schedule a free 15-minute consultation",
     "link":""
   },
   "sections":[
@@ -15,5 +15,5 @@
       "d":"description2",
       "p":"main text 2"
   }],
-  "quote":". – Theodore Roosevelt"
+  "quote":"The body is everything. – Anonymous"
 }

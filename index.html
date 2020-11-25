@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>WHY Power Coaching</title>
+<title>WHY Power Coaching LLC, Boulder, Denver</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,6 +11,14 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+.section1-icon::before {content: "\f13d"}
+.section2-icon::before {content: "\f0f4"}
+.section1-icon_0::before {content: "\f118"}
+.section2-icon_0::before {content: "\f197"}
+.section1-icon_1::before {content: "\f5c0"}
+.section2-icon_1::before {content: "\f5d2"}
+.section1-icon_2::before {content: "\f13d"}
+.section2-icon_2::before {content: "\f0f4"}
 </style>
 <body>
 
@@ -50,7 +58,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     </div>
 
     <div class="w3-third w3-center">
-      <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
+      <i class="fa fa-anchor w3-padding-64 w3-text-red section1-icon"></i>
     </div>
   </div>
 </div>
@@ -59,7 +67,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div id="section2" class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-third w3-center">
-      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
+      <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right section2-icon"></i>
     </div>
 
     <div class="w3-twothird">
@@ -103,6 +111,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 var topnav = document.querySelector("#topnav");
 var header = document.querySelector("header");
 var sectionTemplate = document.querySelector("#section3");
+var getStartedURL = "https://forms.gle/zi1pgjQTtABAdTNN9";
+var baseURL = "https://nicholasdunbar.github.io/why-power-coaching/";
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleMenu() {
@@ -112,6 +122,9 @@ function toggleMenu() {
   } else {
     x.className = x.className.replace(" w3-show", "");
   }
+}
+function getStartedBtnFn(){
+  window.location.href = getStartedURL;
 }
 function loadContent(json){
   var n;
@@ -124,7 +137,7 @@ function loadContent(json){
     header.remove();
   }
   if (json.header.isShow){
-    initHeader(json.header.h, json.header.p, json.header.l);
+    initHeader(json.header.h, json.header.p, json.header.link);
   }
   for (var i = 0; i < json.sections.length; i++){
     n = i+1;
@@ -138,7 +151,7 @@ function loadContent(json){
       sectionLast.after(sectionClone);
       sectionLast = sectionClone;
     }
-    initText("#section"+n, json.sections[i].h, json.sections[i].d, json.sections[i].p);
+    initText("#section"+n, json.sections[i].h, json.sections[i].d, json.sections[i].p, json.sections[i].glyph);
 
   }
   clearSectionsAfter(++n);
@@ -148,7 +161,7 @@ function loadContent(json){
 function initNavButtons(linkNames){
   var links1 = document.querySelectorAll("#nav1 a");
   var links2 = document.querySelectorAll("#nav2 a");
-  var baseURL = "https://nicholasdunbar.github.io/why-power-coaching/";
+
   function getContentFn(i){
     return function(){
       fetch(baseURL+i+"-content.json")
@@ -169,8 +182,11 @@ function initNavButtons(linkNames){
 }
 //update Header
 function initHeader(h, p, l){
-  header.querySelector('h1').innerText = h;
+  getStartedURL = l;
+  header.querySelector('h1').innerHTML = h;
   header.querySelector('p').innerText = p;
+  header.querySelector('button').removeEventListener("click", getStartedBtnFn);
+  header.querySelector('button').addEventListener("click", getStartedBtnFn);
 }
 //remove sections after n
 function clearSectionsAfter(n){
@@ -183,11 +199,22 @@ function clearSectionsAfter(n){
   }
 }
 //replaces text in certain sections
-function initText(section, titleTxt, descriptionTxt, bodyTxt) {
+function initText(section, titleTxt, descriptionTxt, bodyTxt, glyphClass) {
   console.log("replace text ran");
   var titleEl = document.querySelector(section+" h1");
   var descriptionEl = document.querySelector(section+" h5");
   var bodyEl = document.querySelector(section+" p");
+  var glyphEl = document.querySelector(section+" i");
+
+  //update glyph class
+  glyphEl.classList.forEach((item, i) => {
+    if (item.includes("section") && glyphClass != null){
+      glyphEl.classList[i] = glyphClass;
+    }
+  });
+
+  console.log(glyphEl.classList);
+  //document.styleSheets[4].addRule(section+' i:before','content: "\\'+glyph+'";');
   //first paragraph text
   titleEl.innerText = titleTxt;
   descriptionEl.innerText = descriptionTxt;
@@ -203,7 +230,7 @@ function setHomeContent(){
   if (!document.body.contains(header)){
     topnav.after(header);
   }
-  initHeader('"Why Power Coaching LLC"',"You don't need WILL Power, you need WHY power.", "");
+  initHeader('"Why Power Coaching LLC"',"You don't need WILL Power, you need WHY power.", getStartedURL);
   clearSectionsAfter(3);
   initText( "#section1",
             "Will Power Doesn't Work",
@@ -215,7 +242,8 @@ function setHomeContent(){
             "Coaching uses psychological techniques that help stimulate a person's motivation. "+
             "Why Power Coaches are trained in an evidence based technique called Motivational Interviewing (MI). "+
             "It's effectiveness has been validated in 200 randomized control studies. "+
-            "Randomized control studies are the highest quality evidence science has to offer. "
+            "Randomized control studies are the highest quality evidence science has to offer. ",
+            "section1_icon"
           );
   initText( "#section2",
             "What We Do",
@@ -227,7 +255,8 @@ function setHomeContent(){
 
             "Good coaches interrupt unproductive thought patterns. "+
             "They help you creatively explore and unearth your deepest motivations. "+
-            "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone."
+            "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone.",
+            "section2_icon"
           );
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");
 }

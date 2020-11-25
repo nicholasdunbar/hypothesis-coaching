@@ -1,7 +1,7 @@
 {
   "header":{
     "isShow":true,
-    "h":"Life-Direction Coaching for Young Men",
+    "h":"Life-Direction Coaching",
     "p":"Schedule a free 15-minute consultation",
     "link":"https://forms.gle/zi1pgjQTtABAdTNN9"
   },
@@ -9,11 +9,14 @@
     {
       "h":"Is your son looking for his true north?",
       "d":"Are you worried about your 16-to-25-year-old son’s lack of direction? Maybe, you want to help him choose a degree, a career, or something else but will he listen to you?",
-      "p":"In the late-teens and early-twenties it is normal for young adults to be unsure of what to do with their lives. It’s a big decision. They are growing up and that means they are listening to you less. That's a good thing, but it makes it hard to support them. That’s where coaching from someone neutral and outside the family can be useful."},
+      "p":"In the late-teens and early-twenties it is normal for young adults to be unsure of what to do with their lives. It’s a big decision. They are growing up and that means they are listening to you less. That's a good thing, but it makes it hard to support them. That’s where coaching from someone neutral and outside the family can be useful.",
+      "glyph":"section1-icon_1"
+    },
     {
       "h":"How does life-direction coaching work?",
       "d":"I help young men start planning the beginning of their adult lives by getting them in touch with their values, motivation, and purpose. I prompt them out of apathy and into action and exploration. ",
-      "p":"Your son sets the goals, and the coach uses a variety of psychological techniques to stimulate his motivation. One such technique I use is Motivational Interviewing (MI) which has been proven effective in 200 randomized controlled trials. The world's top performers, such as professional athletes, CEOs, and artists use it. Why not your son?"
+      "p":"Your son sets the goals, and the coach uses a variety of psychological techniques to stimulate his motivation. One such technique I use is Motivational Interviewing (MI) which has been proven effective in 200 randomized controlled trials. The world's top performers, such as professional athletes, CEOs, and artists use it. Why not your son?",
+      "glyph":"section2-icon_1"
     },
     {
       "h":"How is coaching different from career counseling?",

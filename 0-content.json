@@ -9,11 +9,15 @@
     {
       "h":"A happy body supports a happy mind",
       "d":"I’ll help you fight depression by guiding you to improve your physical health, to access your motivation, and to get organized. ",
-      "p":"It's hard to get motivated when you're depressed or anxious – seriously hard. One reason I became a health coach is because I’ve been there too, and along with therapy, coaching really helped me to overcome depression."},
+      "p":"It's hard to get motivated when you're depressed or anxious – seriously hard. One reason I became a health coach is because I’ve been there too, and along with therapy, coaching really helped me to overcome depression.",
+      "glyph":"section1-icon_0"
+    },
+
     {
       "h":"Small goals lead to big changes",
       "d":"Not ready to work on your health just yet? That’s ok. Just getting something done, no matter how small, is one of the keys to fighting depression.",
-      "p":"Coaching can help break the stagnation and start to nudge you toward action. What have you been feeling stuck about? Together, we can start taking steps."
+      "p":"Coaching can help break the stagnation and start to nudge you toward action. What have you been feeling stuck about? Together, we can start taking steps.",
+      "glyph":"section2-icon_0"
     },
     {
       "h":"How does health coaching work?",

@@ -19,7 +19,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .section2-icon-0::before {content: "\f197"}
 /*true north*/
 .section1-icon-1::before {content: "\f14e"}
-.section2-icon-1::before {content: "\f0a3"}
+.section2-icon-1::before {content: "\f00c"}
 /*nafld*/
 .section1-icon-2::before {content: "\f13d"}
 .section2-icon-2::before {content: "\f0f4"}
@@ -221,8 +221,8 @@ function initText(section, titleTxt, descriptionTxt, bodyTxt, glyphClass) {
   }
 
   //first paragraph text
-  titleEl.innerText = titleTxt;
-  descriptionEl.innerText = descriptionTxt;
+  titleEl.innerHTML = titleTxt;
+  descriptionEl.innerHTML = descriptionTxt;
   bodyEl.innerHTML = bodyTxt;
 }
 function initQuote(qText){

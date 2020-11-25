@@ -11,14 +11,18 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
 .fa-anchor,.fa-coffee {font-size:200px}
+//home
 .section1-icon::before {content: "\f13d"}
 .section2-icon::before {content: "\f0f4"}
-.section1-icon_0::before {content: "\f118"}
-.section2-icon_0::before {content: "\f197"}
-.section1-icon_1::before {content: "\f5c0"}
-.section2-icon_1::before {content: "\f5d2"}
-.section1-icon_2::before {content: "\f13d"}
-.section2-icon_2::before {content: "\f0f4"}
+//depression
+.section1-icon-0::before {content: "\f118"}
+.section2-icon-0::before {content: "\f197"}
+//true north
+.section1-icon-1::before {content: "\f14e"}
+.section2-icon-1::before {content: "\f0a3"}
+//nafld
+.section1-icon-2::before {content: "\f13d"}
+.section2-icon-2::before {content: "\f0f4"}
 </style>
 <body>
 
@@ -207,14 +211,15 @@ function initText(section, titleTxt, descriptionTxt, bodyTxt, glyphClass) {
   var glyphEl = document.querySelector(section+" i");
 
   //update glyph class
-  glyphEl.classList.forEach((item, i) => {
-    if (item.includes("section") && glyphClass != null){
-      glyphEl.classList[i] = glyphClass;
-    }
-  });
+  if (glyphEl != null){
+    glyphEl.classList.forEach((item, i) => {
+      if (item.includes("section") && glyphClass != null){
+        glyphEl.classList.remove(glyphEl.classList[i]);
+        glyphEl.classList.add(glyphClass);
+      }
+    });
+  }
 
-  console.log(glyphEl.classList);
-  //document.styleSheets[4].addRule(section+' i:before','content: "\\'+glyph+'";');
   //first paragraph text
   titleEl.innerText = titleTxt;
   descriptionEl.innerText = descriptionTxt;
@@ -243,7 +248,7 @@ function setHomeContent(){
             "Why Power Coaches are trained in an evidence based technique called Motivational Interviewing (MI). "+
             "It's effectiveness has been validated in 200 randomized control studies. "+
             "Randomized control studies are the highest quality evidence science has to offer. ",
-            "section1_icon"
+            "section1-icon"
           );
   initText( "#section2",
             "What We Do",
@@ -256,7 +261,7 @@ function setHomeContent(){
             "Good coaches interrupt unproductive thought patterns. "+
             "They help you creatively explore and unearth your deepest motivations. "+
             "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone.",
-            "section2_icon"
+            "section2-icon"
           );
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");
 }

@@ -10,13 +10,13 @@
       "h":"HEADER",
       "d":"description",
       "p":"main text",
-      "glyph":"section1-icon_2"
+      "glyph":"section1-icon-2"
     },
     {
       "h":"HEADER2",
       "d":"description2",
       "p":"Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a>",
-      "glyph":"section2-icon_2"
+      "glyph":"section2-icon-2"
   }],
   "quote":"The body is everything. – Anonymous"
 }

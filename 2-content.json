@@ -1,22 +1,22 @@
 {
   "header":{
     "isShow":true,
-    "h":"Non-Alcoholic Fatty Liver Disease",
+    "h":"Manage, Stop, or Reverse your Non-Alcoholic Fatty Liver Disease",
     "p":"Schedule a free 15-minute consultation",
     "link":"https://forms.gle/zi1pgjQTtABAdTNN9"
   },
   "sections":[
     {
-      "h":"HEADER",
-      "d":"description",
-      "p":"main text",
+      "h":"I reversed my non-alcoholic fatty liver disease",
+      "d":"Years ago I was diagnosed with NAFLD. I was told that reversing it was rare. I was determined to beat the odds and I eventually succeeded. Knowing what changes to make isn’t enough, you need to know how to make the changes. A health coach, like me, who has been through the process can help you make the changes to your diet.",
+      "p":"Don’t be alarmed, in most cases it can take years or decades to start having problems, but if NAFLD isn’t handled early on, it can turn into painful liver scarring (cirrhosis), which later on can become fatal. If you have a lifestyle that gave you NAFLD then you probably have a lifestyle that increases your risk of getting diabetes, hypertension, heart disease, or a stroke.",
       "glyph":"section1-icon-2"
     },
     {
-      "h":"HEADER2",
-      "d":"description2",
-      "p":"Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a>",
+      "h":"How does health coaching work?",
+      "d":"Good coaches interrupt unproductive thought patterns. They help you creatively explore and unearth your deepest motivations. They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone.",
+      "p":"You set the goals, and the coach uses a variety of psychological techniques to stimulate your motivation. One such technique we will use is Motivational Interviewing (MI) which has been proven effective in 200 randomized controlled trials. The world's top performers, such as professional athletes, CEOs, and artists use it. Why not you? Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">Click here to get started.</a>",
       "glyph":"section2-icon-2"
-  }],
+    }],
   "quote":"The body is everything. – Anonymous"
 }

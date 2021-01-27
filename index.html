@@ -182,6 +182,7 @@ function initNavButtons(linkNames){
   }
   for (n = 0; n <= 2; n++){
     links2[n].innerText = linkNames[n];
+    links2[n].addEventListener("click", getContentFn(n));
   }
 }
 //update Header

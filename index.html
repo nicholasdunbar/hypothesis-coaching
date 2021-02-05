@@ -30,17 +30,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div id="topnav" class="w3-top">
   <div id="nav1" class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#depression" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Depression</a>
-    <a href="#direction" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Life Direction Coaching</a>
-    <a href="#nafld" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Fatty Liver Disease</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="depression.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Depression</a>
+    <a href="direction.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Life Direction Coaching</a>
+    <a href="nafld.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Fatty Liver Disease</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="nav2" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#depression" class="w3-bar-item w3-button w3-padding-large">Depression</a>
-    <a href="#direction" class="w3-bar-item w3-button w3-padding-large">Life Direction Coaching</a>
-    <a href="#nafld" class="w3-bar-item w3-button w3-padding-large">Fatty Liver Disease</a>
+    <a href="depression.html" class="w3-bar-item w3-button w3-padding-large">Depression</a>
+    <a href="direction.html" class="w3-bar-item w3-button w3-padding-large">Life Direction Coaching</a>
+    <a href="nafld.html" class="w3-bar-item w3-button w3-padding-large">Fatty Liver Disease</a>
   </div>
 </div>
 
@@ -184,11 +184,11 @@ function initNavButtons(linkNames){
   links1[1].addEventListener("click", setHomeContent);
   for (n = 2; n <= 4; n++){
     links1[n].innerText = linkNames[n-2];
-    links1[n].addEventListener("click", getContentFn(n-2));
+    //links1[n].addEventListener("click", getContentFn(n-2));
   }
   for (n = 0; n <= 2; n++){
     links2[n].innerText = linkNames[n];
-    links2[n].addEventListener("click", getContentFn(n));
+    //links2[n].addEventListener("click", getContentFn(n));
   }
 }
 //update Header
@@ -289,10 +289,10 @@ switch(page){
   case "depression.html":
     getContentFn(0)();
   break;
-  case "#direction":
+  case "direction.html":
     getContentFn(1)();
   break;
-  case "#nafld":
+  case "nafld.html":
     getContentFn(2)();
   break;
   default:

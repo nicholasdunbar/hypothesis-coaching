@@ -177,18 +177,31 @@ function getContentFn(i){
     .then(loadContent);
   }
 }
-function initNavButtons(linkNames){
+function initNavButtons(linkNames, highlight){
   var links1 = document.querySelectorAll("#nav1 a");
   var links2 = document.querySelectorAll("#nav2 a");
 
-  links1[1].addEventListener("click", setHomeContent);
+  //set first home link
+  //links1[1].addEventListener("click", setHomeContent);
+  links1[n].classList.remove("w3-white");
+  if (highlight == null){
+      links1[n].classList.add("w3-white");
+  }
   for (n = 2; n <= 4; n++){
     links1[n].innerText = linkNames[n-2];
     //links1[n].addEventListener("click", getContentFn(n-2));
+    links1[n].classList.remove("w3-white");
+    if (n-2 == highlight){
+      links1[n].classList.add("w3-white");
+    }
   }
   for (n = 0; n <= 2; n++){
     links2[n].innerText = linkNames[n];
     //links2[n].addEventListener("click", getContentFn(n));
+    //links2[n].classList.remove("w3-white");
+    //if (n == highlight){
+    //  links2[n].classList.add("w3-white");
+    //}
   }
 }
 //update Header
@@ -275,29 +288,37 @@ function setHomeContent(){
 }
 
 
-initNavButtons(new Array(
-                "Depression",
-                "Life Direction Coaching",
-                "Fatty Liver Disease")
-              );
-
-
 //load content
 var URL = window.location.pathname; // Gets page name
 var page = URL.substring(URL.lastIndexOf('/') + 1);
+var highlight = -1;
 switch(page){
   case "depression.html":
+  //set button to white
+  //w3-white
+    highlight = 0;
     getContentFn(0)();
   break;
   case "direction.html":
+    highlight = 1;
     getContentFn(1)();
   break;
   case "nafld.html":
+    highlight = 2;
     getContentFn(2)();
   break;
   default:
     setHomeContent();
 }
+
+initNavButtons(new Array(
+                "Depression",
+                "Life Direction Coaching",
+                "Fatty Liver Disease"),
+                highlight
+              );
+
+
 jumpToTop();
 </script>
 

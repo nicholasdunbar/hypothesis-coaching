@@ -127,6 +127,12 @@ function toggleMenu() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+//scroll to the top of the document
+function jumpToTop() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+//navigate to form to apply
 function getStartedBtnFn(){
   window.location.href = getStartedURL;
 }
@@ -143,6 +149,7 @@ function loadContent(json){
   if (json.header.isShow){
     initHeader(json.header.h, json.header.p, json.header.link);
   }
+  jumpToTop();
   for (var i = 0; i < json.sections.length; i++){
     n = i+1;
     section = document.querySelector("#section"+n);
@@ -162,6 +169,7 @@ function loadContent(json){
 
   initQuote(json.quote);
 }
+//get function that when ran will load jason content
 function getContentFn(i){
   return function(){
     fetch(baseURL+i+"-content.json")
@@ -274,7 +282,7 @@ initNavButtons(new Array(
               );
 
 
-
+//load content
 switch(window.location.hash){
   case "#depression":
     getContentFn(0)();
@@ -288,7 +296,7 @@ switch(window.location.hash){
   default:
     setHomeContent();
 }
-
+jumpToTop();
 </script>
 
 </body>

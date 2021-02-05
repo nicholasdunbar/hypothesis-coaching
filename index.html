@@ -30,17 +30,17 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div id="topnav" class="w3-top">
   <div id="nav1" class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="toggleMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Depression</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Life Direction Coaching</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Fatty Liver Disease</a>
+    <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="#depression" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Depression</a>
+    <a href="#direction" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Life Direction Coaching</a>
+    <a href="#nafld" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Fatty Liver Disease</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="nav2" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Depression</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Life Direction Coaching</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Fatty Liver Disease</a>
+    <a href="#depression" class="w3-bar-item w3-button w3-padding-large">Depression</a>
+    <a href="#direction" class="w3-bar-item w3-button w3-padding-large">Life Direction Coaching</a>
+    <a href="#nafld" class="w3-bar-item w3-button w3-padding-large">Fatty Liver Disease</a>
   </div>
 </div>
 
@@ -162,18 +162,16 @@ function loadContent(json){
 
   initQuote(json.quote);
 }
+function getContentFn(i){
+  return function(){
+    fetch(baseURL+i+"-content.json")
+    .then(function(response){return response.json()})
+    .then(loadContent);
+  }
+}
 function initNavButtons(linkNames){
   var links1 = document.querySelectorAll("#nav1 a");
   var links2 = document.querySelectorAll("#nav2 a");
-
-  function getContentFn(i){
-    return function(){
-      fetch(baseURL+i+"-content.json")
-      .then(function(response){return response.json()})
-      .then(loadContent);
-    }
-
-  }
 
   links1[1].addEventListener("click", setHomeContent);
   for (n = 2; n <= 4; n++){
@@ -244,7 +242,7 @@ function setHomeContent(){
             "We've all heard the Nike ad. Just do it. And yet after decades of advertising "+
             "60% of Americans are Obese. Will power doesn't work. It is time for a new approach.",
 
-            "Start by asking WHY you wan't to make a change in your life. "+
+            "Start by asking WHY you want to make a change in your life. "+
             "Coaching uses psychological techniques that help stimulate a person's motivation. "+
             "Why Power Coaches are trained in an evidence based technique called Motivational Interviewing (MI). "+
             "It's effectiveness has been validated in 200 randomized control studies - "+
@@ -274,8 +272,22 @@ initNavButtons(new Array(
                 "Life Direction Coaching",
                 "Fatty Liver Disease")
               );
-setHomeContent();
 
+
+
+switch(window.location.hash){
+  case "#depression":
+    getContentFn(0)();
+  break;
+  case "#direction":
+    getContentFn(1)();
+  break;
+  case "#nafld":
+    getContentFn(2)();
+  break;
+  default:
+    setHomeContent();
+}
 
 </script>
 

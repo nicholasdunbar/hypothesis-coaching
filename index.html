@@ -283,8 +283,10 @@ initNavButtons(new Array(
 
 
 //load content
-switch(window.location.hash){
-  case "#depression":
+var URL = window.location.pathname; // Gets page name
+var page = URL.substring(URL.lastIndexOf('/') + 1);
+switch(page){
+  case "depression.html":
     getContentFn(0)();
   break;
   case "#direction":

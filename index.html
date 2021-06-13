@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>WHY Power Coaching LLC, Boulder, Denver</title>
+<title>DEZOW Coaching, Boulder, Denver</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -105,10 +105,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
     <i class="fa fa-instagram w3-hover-opacity"></i>
     <i class="fa fa-snapchat w3-hover-opacity"></i>
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>-->
+    <a href="https://www.acefitness.org/education-and-resources/lifestyle/find-ace-pro/dwwwwvvw/nicholas-dunbar/"><i class="fa w3-hover-opacity">Certification</i></a>
     <!--<a href="https://twitter.com/why_power"><i class="fa fa-twitter w3-hover-opacity"></i></a>-->
     <!--<i class="fa fa-linkedin w3-hover-opacity"></i>-->
+    -
+    <a href="disclaimer.html"><i class="fa w3-hover-opacity">Disclaimer</i></a>
+    -
+    <a href="TOS.html"><i class="fa w3-hover-opacity">Terms of Service</i></a>
  </div>
- <p>©️ Why Power Coaching LLC.</p>
+ <p>©️ DEZOW LLC.</p>
 </footer>
 
 <script>
@@ -255,13 +260,13 @@ function setHomeContent(){
   if (!document.body.contains(header)){
     topnav.after(header);
   }
-  initHeader('"Why Power Coaching LLC"',"You don't need WILL Power, you need WHY power.", getStartedURL);
+  initHeader('There is a new way to lose weight.',"You don't need WILL Power, you need WHY power.", getStartedURL);
   clearSectionsAfter(3);
   initText( "#section1",
             "Will Power Alone Doesn't Work",
 
-            "We've all heard the Nike ad. Just do it. And yet after decades of advertising "+
-            "60% of Americans are Obese. Will power doesn't work. It is time for a new approach.",
+            "We've all heard the Nike ad. Just do it. After decades of advertising "+
+            "70% of Americans have obesity or are overweight. Will power doesn't work. It is time for a new approach.",
 
             "Start by asking WHY you want to make a change in your life. "+
             "Coaching uses psychological techniques that help stimulate a person's motivation. "+
@@ -273,7 +278,7 @@ function setHomeContent(){
   initText( "#section2",
             "What We Do",
 
-            "We specialize in parents and their sixteen to early-twenties sons "+
+            "We don't just do weight loss. We specialize in helping sixteen to early-twenties boys "+
             "with Life Direction Coaching, People suffering from depression, "+
             "and People diagnosed with Fatty Liver Disease. "+
             "Click the links in the menu bar for more information",
@@ -281,7 +286,7 @@ function setHomeContent(){
             "Good coaches interrupt unproductive thought patterns. "+
             "They help you creatively explore and unearth your deepest motivations. "+
             "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone. "+
-            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe.",
+            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe.",
             "section2-icon"
           );
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");
@@ -291,7 +296,7 @@ function setHomeContent(){
 //load content
 var URL = window.location.pathname; // Gets page name
 var page = URL.substring(URL.lastIndexOf('/') + 1);
-var highlight = -1;
+var highlight = null;
 switch(page){
   case "depression.html":
   //set button to white
@@ -306,6 +311,8 @@ switch(page){
   case "nafld.html":
     highlight = 2;
     getContentFn(2)();
+  case "disclaimer.html":
+    getContentFn("disclaimer")();
   break;
   default:
     setHomeContent();

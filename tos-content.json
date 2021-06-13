@@ -7,19 +7,19 @@
   },
   "sections":[
     {
-      "h":"Disclaimer header 1",
+      "h":"TOS header 1",
       "d":"We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe. Coaching for NAFLD requires an integrated approach with a register dietitian, functional medical doctor, gastroenterologist, or other qualified MD.",
       "p":".",
       "glyph":"section1-icon-2"
     },
     {
-      "h":"Disclaimer header 2",
+      "h":"TOS header 2",
       "d":".",
       "p":".",
       "glyph":"section2-icon-2"
     },
     {
-      "h":"Disclaimer header 3",
+      "h":"TOS header 3",
       "d":".",
       "p":"."
     }],

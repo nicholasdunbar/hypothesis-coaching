@@ -1,2 +1,2 @@
-# why-power-coaching
+# hypothesis-coaching
 personal website

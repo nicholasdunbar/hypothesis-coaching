@@ -10,8 +10,10 @@
     document.close();
   }
 
-  var baseURL = window.location.protocol+"//"+window.location.hostname+"/";
-
+  var baseURL = window.location.protocol+"//"+window.location.hostname;
+  baseURL += window.location.port != 80 ? ':'+window.location.port : '';
+  baseURL += "/";
+  
   fetch(baseURL+"index.html")
   .then(function(response){return response.text()})
   .then(loadContent);

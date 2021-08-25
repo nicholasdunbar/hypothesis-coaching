@@ -1,0 +1,15 @@
+{
+  "header":{
+    "isShow":false,
+    "h":"",
+    "p":"",
+    "link":""
+  },
+  "sections":[
+    {
+      "h":"Privacy",
+      "d":"The Coach will keep all conversations and information with the Client private and confidential, as allowable by law. No personal information will be shared with anyone without the Client's express permission. Exceptions may be made in the following cases: (1) If there is an imminent threat of serious injury to oneself or someone else. (2) The Coach is seeking advice from other coaching or health professionals in which case the Client's identity will not be shared. (3) The Client has given the coach permission to contact and discuss their health with other providers or family members. (4) When there has been an unlawful breach or lawful 3rd party access of any system like Email, Text, Zoom, Skype, Messenger, Facebook, or any other commercial communication platform.<br/></br>The Coach does not use any communication systems that are Health Insurance Portability and Accountability Act (HIPAA) compliant, meaning that they do not have the same level of security as your health information would at a hospital.",
+      "p":""
+    }],
+  "quote":""
+}

@@ -209,6 +209,10 @@ switch(page){
     highlight = null;
     getContentFn("tos")();
   break;
+  case "privacy.html":
+    highlight = null;
+    getContentFn("privacy")();
+  break;
   default:
     highlight = -1;
     setHomeContent();

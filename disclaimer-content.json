@@ -7,21 +7,9 @@
   },
   "sections":[
     {
-      "h":"Disclaimer header 1",
+      "h":"Disclaimer",
       "d":"We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe. Coaching for NAFLD requires an integrated approach with a register dietitian, functional medical doctor, gastroenterologist, or other qualified MD.",
-      "p":".",
-      "glyph":"section1-icon-2"
-    },
-    {
-      "h":"Disclaimer header 2",
-      "d":".",
-      "p":".",
-      "glyph":"section2-icon-2"
-    },
-    {
-      "h":"Disclaimer header 3",
-      "d":".",
       "p":"."
     }],
-  "quote":"The body is everything, it is the substrate of our joy, our dreams, our consciousness. How strange it is that we treat it so badly. – Anonymous"
+  "quote":""
 }

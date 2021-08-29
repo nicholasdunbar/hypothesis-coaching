@@ -202,7 +202,7 @@ switch(page){
     getContentFn(2)();
     break;
     case "about.html":
-      highlight = 4;
+      highlight = 3;
       getContentFn(3)();
       break;
   case "disclaimer.html":

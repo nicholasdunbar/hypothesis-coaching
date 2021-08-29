@@ -75,7 +75,7 @@ function initNavButtons(linkNames, highlight){
     //highlight the home link in the nav
     links1[1].classList.add("w3-white");
   }
-  for (n = 2; n <= 4; n++){
+  for (n = 2; n <= linkNames.length+1; n++){
     links1[n].innerText = linkNames[n-2];
     //links1[n].addEventListener("click", getContentFn(n-2));
     links1[n].classList.remove("w3-white");
@@ -83,7 +83,7 @@ function initNavButtons(linkNames, highlight){
       links1[n].classList.add("w3-white");
     }
   }
-  for (n = 0; n <= 2; n++){
+  for (n = 0; n <= linkNames.length; n++){
     links2[n].innerText = linkNames[n];
     //links2[n].addEventListener("click", getContentFn(n));
     //links2[n].classList.remove("w3-white");
@@ -149,7 +149,7 @@ function setHomeContent(){
   if (!document.body.contains(header)){
     topnav.after(header);
   }
-  initHeader('There is a new way to lose weight.',"You don't need WILL Power, you need WHY power.", getStartedURL);
+  initHeader('There is a new way<br/>to transform your life.',"You don't need WILL Power, you need WHY power.", getStartedURL);
   clearSectionsAfter(3);
   initText( "#section1",
             "Will Power Alone Doesn't Work",
@@ -167,15 +167,15 @@ function setHomeContent(){
   initText( "#section2",
             "What We Do",
 
-            "We don't just do weight loss. We specialize in helping sixteen to early-twenties boys "+
-            "with Life Direction Coaching, People suffering from depression, "+
-            "and People diagnosed with Fatty Liver Disease. "+
+            "We are ACE certified, health and wellness life coaches. We specialize in helping sixteen to early-twenties boys "+
+            "with Life Direction Coaching, people suffering from depression, "+
+            "and people diagnosed with Fatty Liver Disease. "+
             "Click the links in the menu bar for more information",
 
             "Good coaches interrupt unproductive thought patterns. "+
             "They help you creatively explore and unearth your deepest motivations. "+
             "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone. "+
-            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe.",
+            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe. Coaching for NAFLD requires an integrated approach with a register dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>",
             "section2-icon"
           );
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");
@@ -201,6 +201,10 @@ switch(page){
     highlight = 2;
     getContentFn(2)();
     break;
+    case "about.html":
+      highlight = 4;
+      getContentFn(3)();
+      break;
   case "disclaimer.html":
     highlight = null;
     getContentFn("disclaimer")();
@@ -222,7 +226,8 @@ switch(page){
 initNavButtons(new Array(
                 "Depression",
                 "Life Direction Coaching",
-                "Fatty Liver Disease"),
+                "Fatty Liver Disease",
+                "About"),
                 highlight
               );
 

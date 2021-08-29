@@ -1,0 +1,33 @@
+{
+  "header":{
+    "isShow":true,
+    "h":"Get to know your coach",
+    "p":"Schedule a free 15-minute consultation with me.",
+    "link":"https://forms.gle/zi1pgjQTtABAdTNN9"
+  },
+  "sections":[
+    {
+      "h":"American Councile on Exercise (ACE) Certified Health Coach",
+      "d":"I'm certified by ACE which is an NCCA accredited program and endorsed by the International Coaching Foundation. With an ACE certification you can trust that you will be getting the best in evidence based behavior transformation techniques and health information.",
+      "p":"",
+      "glyph":"section1-icon-2"
+    },
+    {
+      "h":"Mentoring and Life-Direction Coaching",
+      "d":"Years ago when I was starting a tech company here in Boulder CO. I was approached in a coffee shop by a 16 year old boy. He had an odd request for today's youth. He asked if I would mentor him to become an entrepreneur. It quickly became more about life than entrepreneurship. Today he is a grown man who repeatedly tells me I am one of the most influential people in his life and he encourages me to help other young men sort their lives out the way I helped him. He is my inspiration for my life-direction coaching program.",
+      "p":"",
+      "glyph":"section1-icon-2"
+    },
+    {
+      "h":"I reversed my non-alcoholic fatty liver disease",
+      "d":"Years ago I was diagnosed with NAFLD. I was told that reversing it was rare. I was determined to beat the odds and I eventually succeeded. Knowing what changes to make isn’t enough, you need to know how to make the changes. A health coach, like me, who has been through the process can help you make the changes to your diet.",
+      "p":"Don’t be alarmed, in most cases it can take years or decades to start having problems, but if NAFLD isn’t handled early on, it can turn into painful liver scarring (cirrhosis), which later on can become fatal. If you have a lifestyle that gave you NAFLD then you probably have a lifestyle that increases your risk of getting diabetes, hypertension, heart disease, or a stroke.",
+      "glyph":"section1-icon-2"
+    },
+    {
+      "h":"Are you doing everything you can?",
+      "d":"Health and Life Coaching can improve the likelihood you will successfully navigate weightloss, NAFLD, depression, as wells as generally increasing your health and wellbeing.*",
+      "p":"Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe. Coaching for NAFLD requires an integrated approach with a register dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>"
+    }],
+  "quote":"The body is everything, it is the substrate of our joy, our dreams, our consciousness. How strange it is that we treat it so badly. – Anonymous"
+}

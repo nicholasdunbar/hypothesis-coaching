@@ -83,7 +83,7 @@ function initNavButtons(linkNames, highlight){
       links1[n].classList.add("w3-white");
     }
   }
-  for (n = 0; n <= linkNames.length; n++){
+  for (n = 0; n < linkNames.length; n++){
     links2[n].innerText = linkNames[n];
     //links2[n].addEventListener("click", getContentFn(n));
     //links2[n].classList.remove("w3-white");

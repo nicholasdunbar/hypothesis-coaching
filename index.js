@@ -160,7 +160,7 @@ function setHomeContent(){
             "Start by asking WHY you want to make a change in your life. "+
             "Coaching uses psychological techniques that help stimulate a person's motivation. "+
             "Why Power Coaches are trained in an evidence based technique called Motivational Interviewing (MI). "+
-            "It's effectiveness has been validated in 200 randomized control studies - "+
+            "Its effectiveness has been validated in 200 randomized control studies - "+
             "the highest quality evidence science has to offer. ",
             "section1-icon"
           );
@@ -175,7 +175,7 @@ function setHomeContent(){
             "Good coaches interrupt unproductive thought patterns. "+
             "They help you creatively explore and unearth your deepest motivations. "+
             "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone. "+
-            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnosis or proscribe. Coaching for NAFLD requires an integrated approach with a register dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>",
+            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnose or prescribe. Coaching for NAFLD requires an integrated approach with a registered dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>",
             "section2-icon"
           );
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");

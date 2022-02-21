@@ -219,7 +219,8 @@ switch(page){
   break;
   case "15minutecall.html":
     highlight = null;
-    getContentFn("15minutecall")();
+    //getContentFn("15minutecall")();
+    Calendly.initInlineWidget({url: 'https://calendly.com/hypothesiscoaching',parentElement: document.getElementById('section1'),prefill: {},utm: {}});
     break;
   default:
     highlight = -1;

@@ -217,6 +217,10 @@ switch(page){
     highlight = null;
     getContentFn("privacy")();
   break;
+  case "15minutecall.html":
+    highlight = null;
+    getContentFn("15minutecall")();
+    break;
   default:
     highlight = -1;
     setHomeContent();

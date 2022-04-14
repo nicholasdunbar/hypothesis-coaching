@@ -57,13 +57,32 @@ function loadContent(json){
 
   initQuote(json.quote);
 }
-//get function that when ran will load jason content
+//get function that when ran will load json content
 function getContentFn(i){
   return function(){
     fetch(baseURL+i+"-content.json")
     .then(function(response){return response.json()})
     .then(loadContent);
   }
+}
+//get function that when ran will load HTML content
+function getTemplateFn(i){
+  return function(){
+    fetch(baseURL+i+"-template.html")
+    .then(function(response){return response.text()})
+    .then(loadHTMLContent);
+  }
+}
+function loadHTMLContent(html){
+  console.log(html);
+  header.remove();
+  clearSectionsAfter(1);
+  const quote = document.querySelector('#quote');
+  quote.remove();
+  const headerNode = document.querySelector('#topnav');
+  const newNode = document.createElement('div');
+  newNode.innerHTML = html;
+  headerNode.after(newNode);
 }
 function initNavButtons(linkNames, highlight){
   var links1 = document.querySelectorAll("#nav1 a");
@@ -216,6 +235,18 @@ switch(page){
   case "privacy.html":
     highlight = null;
     getContentFn("privacy")();
+  break;
+  case "what-is-coaching.html":
+    highlight = null;
+    getTemplateFn("what-is-coaching")();
+  break;
+  case "red-rope-policy.html":
+    highlight = null;
+    getTemplateFn("red-rope-policy")();
+  break;
+  case "alternatives.html":
+    highlight = null;
+    getTemplateFn("alternatives")();
   break;
   default:
     highlight = -1;

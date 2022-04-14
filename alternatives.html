@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>What is coaching? -  Hypothesis Coaching</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  function loadContent(nc){
+    document.open();
+    document.write(nc);
+    document.close();
+  }
+
+  var baseURL = window.location.protocol+"//"+window.location.hostname;
+  baseURL += window.location.port != 80 ? ':'+window.location.port : '';
+  baseURL += "/";
+
+  fetch(baseURL+"index.html")
+  .then(function(response){return response.text()})
+  .then(loadContent);
+
+</script>
+<body>
+</body>
+</html>

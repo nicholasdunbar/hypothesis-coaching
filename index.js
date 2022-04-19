@@ -2,7 +2,8 @@ var topnav = document.querySelector("#topnav");
 var header = document.querySelector("header");
 var sectionTemplate = document.querySelector("#section3");
 //https://calendly.com/hypothesiscoaching/15-minute-free-consultation
-var getStartedURL = "what-is-coaching.html";
+//var getStartedURL = "what-is-coaching.html";
+var getStartedURL = "https://calendly.com/hypothesiscoaching/15-minute-free-consultation";
 var baseURL = window.location.protocol+"//"+window.location.hostname;
 baseURL += window.location.port != 80 ? ':'+window.location.port : '';
 baseURL += "/";

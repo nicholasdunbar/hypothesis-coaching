@@ -1,6 +1,6 @@
-var topnav = document.querySelector("#topnav");
-var header = document.querySelector("header");
-var sectionTemplate = document.querySelector("#section3");
+var topnav;
+var header;
+var sectionTemplate;
 //https://calendly.com/hypothesiscoaching/15-minute-free-consultation
 //var getStartedURL = "what-is-coaching.html";
 var getStartedURL = "https://calendly.com/hypothesiscoaching/15-minute-free-consultation";
@@ -8,8 +8,18 @@ var baseURL = window.location.protocol+"//"+window.location.hostname;
 baseURL += window.location.port != 80 ? ':'+window.location.port : '';
 baseURL += "/";
 
+//used to load css sheets dynamically
+function loadStyle(src) {
+      let link = document.createElement('link');
+      link.href = src;
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.onerror = () => console.log(`Style load error for ${src}`);
+      document.head.append(link);
+}
+
 // Used to toggle the menu on small screens when clicking on the menu button
-function toggleMenu() {
+function toggleMenu(e) {
   var x = document.getElementById("nav2");
   if (x.className.indexOf("w3-show") == -1) {
     x.className += " w3-show";
@@ -96,7 +106,7 @@ function initNavButtons(linkNames, highlight){
     //highlight the home link in the nav
     links1[1].classList.add("w3-white");
   }
-  for (n = 2; n <= linkNames.length+1; n++){
+  for (var n = 2; n <= linkNames.length+1; n++){
     links1[n].innerText = linkNames[n-2];
     //links1[n].addEventListener("click", getContentFn(n-2));
     links1[n].classList.remove("w3-white");
@@ -124,8 +134,14 @@ function initHeader(h, p, l){
 //remove sections after n
 function clearSectionsAfter(n){
   //clear unnecessary sections
-  section = document.querySelector("#section"+n);
-  while(document.body.contains(section)){
+  var isFound = true;
+  var section;
+  try {
+    section = document.querySelector("#section"+n);
+  } catch(e){
+    isFound = false;
+  }
+  while(isFound && document.body.contains(section)){
     section.remove();
     n++;
     section = document.querySelector("#section"+n);
@@ -165,8 +181,7 @@ function initQuote(qText){
   qEl.innerText = qText;
 }
 function setHomeContent(){
-
-
+  highlight = -1;
   if (!document.body.contains(header)){
     topnav.after(header);
   }
@@ -202,67 +217,49 @@ function setHomeContent(){
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");
 }
 
+//load all the css styles
+loadStyle("https://www.w3schools.com/w3css/4/w3.css");
+loadStyle("https://fonts.googleapis.com/css?family=Montserrat");
+loadStyle("https://fonts.googleapis.com/css?family=Lato");
+loadStyle("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+loadStyle("css/global-styles.css");
 
 //load content
 var URL = window.location.pathname; // Gets page name
 var page = URL.substring(URL.lastIndexOf('/') + 1);
+//set button to white
+//w3-white
 var highlight = null;
-switch(page){
-  case "depression.html":
-  //set button to white
-  //w3-white
-    highlight = 0;
-    getContentFn(0)();
-  break;
-  case "direction.html":
-    highlight = 1;
-    getContentFn(1)();
-  break;
-  case "nafld.html":
-    highlight = 2;
-    getContentFn(2)();
-    break;
-    case "about.html":
-      highlight = 3;
-      getContentFn(3)();
-      break;
-  case "disclaimer.html":
-    highlight = null;
-    getContentFn("disclaimer")();
-  break;
-  case "tos.html":
-    highlight = null;
-    getContentFn("tos")();
-  break;
-  case "privacy.html":
-    highlight = null;
-    getContentFn("privacy")();
-  break;
-  case "what-is-coaching.html":
-    highlight = null;
-    getTemplateFn("what-is-coaching")();
-  break;
-  case "red-rope-policy.html":
-    highlight = null;
-    getTemplateFn("red-rope-policy")();
-  break;
-  case "alternatives.html":
-    highlight = null;
-    getTemplateFn("alternatives")();
-  break;
-  default:
-    highlight = -1;
-    setHomeContent();
+function initPage(){
+  topnav = document.querySelector("#topnav");
+  header = document.querySelector("header");
+  sectionTemplate = document.querySelector("#section3");
+  jumpToTop();
 }
+function initNav(whichNavHighlight){
+  highlight = whichNavHighlight;
+  initNavButtons(new Array(
+    "Depression",
+    "Life Direction Coaching",
+    "Fatty Liver Disease",
+    "About"),
+    highlight
+  );
+}
+//meta pixel code:
+!function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '312932777447892');
+  fbq('track', 'PageView');
+//:end meta pixel code
 
-
-initNavButtons(new Array(
-                "Depression",
-                "Life Direction Coaching",
-                "Fatty Liver Disease",
-                "About"),
-                highlight
-              );
-
-
-jumpToTop();
+// export as Node module /  browser variable
+const toolbox = {initNav, initPage, getContentFn, getTemplateFn, setHomeContent, toggleMenu};
+if (typeof exports === 'object' && typeof module !== 'undefined') module.exports = {toolbox};
+else window.toolbox = toolbox;

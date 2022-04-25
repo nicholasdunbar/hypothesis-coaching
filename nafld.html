@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <title>Non-Alcoholic Fatty Liver Disease Coaching in Boulder, Denver - Hypothesis Coaching</title>
 <meta charset="UTF-8">
+<meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
   function loadContent(nc){
-    document.open();
-    document.write(nc);
-    document.close();
+      const templateEl = document.getElementById("template"); 
+      templateEl.innerHTML = nc;
+      toolbox.initPage();
+      toolbox.initNav(2);
+      toolbox.getContentFn(2)();
   }
+  import('./index.js')
+    .then( () => {
+      let baseURL = window.location.protocol+"//"+window.location.hostname;
+      baseURL += window.location.port != 80 ? ':'+window.location.port : '';
+      baseURL += "/";
 
-  var baseURL = window.location.protocol+"//"+window.location.hostname;
-  baseURL += window.location.port != 80 ? ':'+window.location.port : '';
-  baseURL += "/";
-  fetch(baseURL+"index.html")
-  .then(function(response){return response.text()})
-  .then(loadContent);
-
+      fetch(baseURL+"main-template.html")
+      .then(function(response){return response.text()})
+      .then(loadContent);
+      })
 </script>
+</head>
 <body>
+<div id="template"></div>
+<browser-refresh enabled="true"/> 
 </body>
 </html>

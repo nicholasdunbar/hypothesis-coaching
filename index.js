@@ -1,8 +1,10 @@
 var topnav;
 var header;
 var sectionTemplate;
+//old landing pages for reference:
+//https://forms.gle/zi1pgjQTtABAdTNN9
 //https://calendly.com/hypothesiscoaching/15-minute-free-consultation
-//var getStartedURL = "what-is-coaching.html";
+//what-is-coaching.html;
 var getStartedURL = "https://calendly.com/hypothesiscoaching/15-minute-free-consultation";
 var baseURL = window.location.protocol+"//"+window.location.hostname;
 baseURL += window.location.port != 80 ? ':'+window.location.port : '';

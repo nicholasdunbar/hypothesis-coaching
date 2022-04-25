@@ -149,7 +149,6 @@ function clearSectionsAfter(n){
 }
 //replaces text in certain sections
 function initText(section, titleTxt, descriptionTxt, bodyTxt, glyphClass) {
-  console.log("replace text ran");
   var titleEl = document.querySelector(section+" h1");
   var descriptionEl = document.querySelector(section+" h5");
   var bodyEl = document.querySelector(section+" p");
@@ -175,6 +174,14 @@ function initText(section, titleTxt, descriptionTxt, bodyTxt, glyphClass) {
   titleEl.innerHTML = titleTxt;
   descriptionEl.innerHTML = descriptionTxt;
   bodyEl.innerHTML = bodyTxt;
+  //replace get started URLs with the one defined at the top
+  //This allows me to easily change the langing page across all content 
+  let anchorEl;
+  anchorEl = bodyEl.querySelector('a.get-started');
+  if (anchorEl) anchorEl.href = getStartedURL;
+  anchorEl = descriptionEl.querySelector('a.get-started');
+  if (anchorEl) anchorEl.href = getStartedURL;
+  
 }
 function initQuote(qText){
   var qEl = document.querySelector("#quote");
@@ -211,7 +218,7 @@ function setHomeContent(){
             "Good coaches interrupt unproductive thought patterns. "+
             "They help you creatively explore and unearth your deepest motivations. "+
             "They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone. "+
-            "<br><br>Contact us now, <a href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnose or prescribe. Coaching for NAFLD requires an integrated approach with a registered dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>",
+            "<br><br>Contact us now, <a  class=\"get-started\" href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br>Download <a href=\"https://docs.google.com/document/d/1MPu0u-vEvTZePmOS1k911bH41HvpvJE1B0SSwyxkqoU/edit?usp=sharing\">brochure here</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnose or prescribe. Coaching for NAFLD requires an integrated approach with a registered dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>",
             "section2-icon"
           );
   initQuote("Do what you can, with what you have, where you are. – Theodore Roosevelt");

@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Career Coaching For Young Adults in Boulder, Denver - Hypothesis Coaching</title>
-<meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
-<script>
-  function loadContent(nc){
-      const templateEl = document.getElementById("template"); 
-      templateEl.innerHTML = nc;
-      toolbox.initPage();
-      toolbox.initNav(1);
-      toolbox.getContentFn(1)();
-  }
-  import('./index.js')
-    .then( () => {
-      let baseURL = window.location.protocol+"//"+window.location.hostname;
-      baseURL += window.location.port != 80 ? ':'+window.location.port : '';
-      baseURL += "/";
-
-      fetch(baseURL+"main-template.html")
-      .then(function(response){return response.text()})
-      .then(loadContent);
-      })
-</script>
+  <title>Career Coaching For Young Adults in Boulder, Denver - Hypothesis Coaching</title>
+  <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <script>
+    var content = {};
+    import('./index.js')
+      .then( () => toolbox.getTemplateFn("main") )
+      .then( () => toolbox.getJSONFn("direction"))
+      .then( (obj) => {
+        content = obj;
+        content.header.link = toolbox.getScheduleURL();
+      } )
+      .then( () => toolbox.getTemplateFn("header", content.header) )
+      .then( () => toolbox.getTemplateFn("section1-glyph", content.sections[0]) )
+      .then( () => toolbox.getTemplateFn("section2-glyph", content.sections[1]) )
+      .then( () => toolbox.getTemplateFn("section3", content.sections[2]) )
+      .then( () => toolbox.getTemplateFn("section3", content.sections[3]) )
+      .then(()=>
+        {
+          //init toolbox
+          toolbox.initPage();
+          //set nav bar highlight
+          toolbox.initNav(undefined);
+          toolbox.initQuote(content.quote);
+        })
+      .then( () => console.log("load successful"));
+  </script>
 </head>
 <body>
 <div id="template"></div>

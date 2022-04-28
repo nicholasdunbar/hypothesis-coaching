@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Alternatives to Coaching? - Health Coaching, Career Coaching, and Life Coaching in Boulder, Denver -  Hypothesis Coaching</title>
+    <title>Alternatives to Coaching? - Health Coaching, Young Adult Career Coaching, and Life Coaching in Boulder, Denver -  Hypothesis Coaching</title>
     <meta charset="UTF-8">
     <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-      function loadContent(nc){
-          const templateEl = document.getElementById("template"); 
-          templateEl.innerHTML = nc;
+      import('./index.js')
+      .then( () => toolbox.getTemplateFn("main") )
+      .then(()=>
+        {
           toolbox.initPage();
           toolbox.initNav(undefined);
-          toolbox.getTemplateFn("alternatives")();
-      }
-      import('./index.js')
-        .then( () => {
-          let baseURL = window.location.protocol+"//"+window.location.hostname;
-          baseURL += window.location.port != 80 ? ':'+window.location.port : '';
-          baseURL += "/";
-    
-          fetch(baseURL+"main-template.html")
-          .then(function(response){return response.text()})
-          .then(loadContent);
-          })
+          toolbox.initQuote("“Take action. An inch of movement will bring you closer to your goals than a mile of intention” – Steve Maraboli");
+          return toolbox.getHTMLContentFn("alternatives");
+        })
+      .then( () => console.log("load successful"));
     </script>
   </head>
 <body>

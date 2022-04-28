@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>About - Health Coaching for Depression in Boulder, Denver -  Hypothesis Coaching</title>
-  <meta charset="UTF-8">
+  <title>Hypothesis Coaching - Health Coaching, Young Adult Career Coaching and Life Coaching in Boulder, Denver</title>
   <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
   <script>
     var content = {};
     import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )
-      .then( () => toolbox.getJSONFn("about"))
+      .then( () => toolbox.getJSONFn("motivation"))
       .then( (obj) => {
         content = obj;
         content.header.link = toolbox.getScheduleURL();
       } )
       .then( () => toolbox.getTemplateFn("header", content.header) )
       .then( () => toolbox.getTemplateFn("section1-glyph", content.sections[0]) )
-      .then( () => toolbox.getTemplateFn("section2-glyph", content.sections[1]) )
-      .then( () => toolbox.getTemplateFn("section3", content.sections[2]) )
-      .then( () => toolbox.getTemplateFn("section3", content.sections[3]) )
+      .then( () => toolbox.getTemplateFn("section3", content.sections[1]) )
       .then(()=>
         {
           //init toolbox
           toolbox.initPage();
           //set nav bar highlight
-          toolbox.initNav("about");
+          toolbox.initNav(undefined);
           toolbox.initQuote(content.quote);
         })
       .then( () => console.log("load successful"));
   </script>
-</head>
+<head>
 <body>
   <div id="template"></div>
   <browser-refresh enabled="true"/> 

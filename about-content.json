@@ -1,9 +1,10 @@
 {
   "header":{
-    "isShow":true,
-    "h":"Get to know your coach",
+    "showCss":"visibility: visible !important;",
+    "h1":"Get to know your coach",
     "p":"Schedule a free 15-minute consultation with me.",
-    "link":"https://calendly.com/hypothesiscoaching/15-minute-free-consultation"
+    "linkText":"Get a 15 minute consultation",
+    "link":""
   },
   "sections":[
     {

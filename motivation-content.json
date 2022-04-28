@@ -1,0 +1,24 @@
+{
+  "header":{
+    "showCss": "visibility: visible !important;",
+    "h1":"There is a new way<br/>to transform your life.",
+    "p":"You don't need WILL Power, you need WHY power.",
+    "linkText":"Get a 15 minute consultation",
+    "link":""
+  },
+  "sections":[
+    {
+      "h":"Will Power Alone Doesn't Work",
+      "d":"We've all heard the Nike ad. Just do it. After decades of advertising 70% of Americans have obesity or are overweight. Will power doesn't work. It is time for a new approach.",
+      "p":"Start by asking WHY you want to make a change in your life. Coaching uses psychological techniques that help stimulate a person's motivation. Why Power Coaches are trained in an evidence based technique called Motivational Interviewing (MI). Its effectiveness has been validated in 200 randomized control studies - the highest quality evidence science has to offer.",
+      "glyph":"section1-icon"
+    },
+
+    {
+      "h":"What We Do",
+      "d":"We are ACE certified, health and wellness life coaches. We specialize in helping sixteen to early-twenties boys with Life Direction Coaching, people suffering from depression, and people diagnosed with Fatty Liver Disease. Click the links in the menu bar for more information.",
+      "p":"Good coaches interrupt unproductive thought patterns. They help you creatively explore and unearth your deepest motivations. They teach personal-organizational strategies, but most of all, they're there for you, so you don't have to struggle alone. <br><br>Contact us now, <a  class=\"get-started\" href=\"https://forms.gle/zi1pgjQTtABAdTNN9\">click here to get started</a><br><br>* We are not medical professionals. We are behavior change experts. We do not diagnose or prescribe. Coaching for NAFLD requires an integrated approach with a registered dietitian, functional medical doctor, gastroenterologist, or other qualified MD. Coaching for depression requires you are also seeing a licensed therapist or state certified mental health practitioner. <a href=\"disclaimer.html\">See disclaimer here.</a>",
+      "glyph":"section2-icon"
+    }],
+  "quote":"Do what you can, with what you have, where you are. – Theodore Roosevelt"
+}

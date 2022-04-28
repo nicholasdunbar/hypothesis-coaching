@@ -1,0 +1,17 @@
+{
+  "header":{
+    "showCss":true,
+    "h1":"Contact Us",
+    "p":"Schedule a free 15-minute consultation",
+    "linkText":"click to get started",
+    "link":"https://calendly.com/hypothesiscoaching/15-minute-free-consultation"
+  },
+  "sections":[
+    {
+      "h":"Call Us",
+      "d":"(862)803-0467",
+      "p":"1719 yellow pine ave, boulder, CO. 80304",
+      "glyph":"section1-icon-2"
+    }],
+  "quote":"The body is everything, it is the substrate of our joy, our dreams, our consciousness. How strange it is that we treat it so badly. – Anonymous"
+}

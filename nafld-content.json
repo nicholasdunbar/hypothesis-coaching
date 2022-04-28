@@ -1,9 +1,10 @@
 {
   "header":{
-    "isShow":true,
-    "h":"Manage or Reverse your Non-Alcoholic Fatty Liver Disease",
-    "p":"Schedule a free 15-minute consultation",
-    "link":"https://calendly.com/hypothesiscoaching/15-minute-free-consultation"
+    "showCss": "visibility: visible !important;",
+    "h1":"Manage or Reverse your Non-Alcoholic Fatty Liver Disease",
+    "p":"Schedule a free 15-minute consultation with me.",
+    "linkText":"Get a 15 minute consultation",
+    "link":""
   },
   "sections":[
     {

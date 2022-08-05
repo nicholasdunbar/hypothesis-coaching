@@ -8,9 +8,13 @@
     function validate(){
       const inputs = document.querySelectorAll('input');
       const list = [true, ...inputs];
+      if (!list[1].checked){
+        alert('Please check the boxes to continue.');
+        return;
+      }
       const isAll = list.reduce((prev,cur)=> prev && cur.checked);
       if(isAll){
-        window.location.href = "https://calendly.com/hypothesiscoaching/15-minute-free-consultation";
+        window.location.href = toolbox.getScheduleURL()
         return;
       }
       window.location.href = "alternatives.html"

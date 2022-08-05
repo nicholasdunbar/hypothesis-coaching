@@ -16,7 +16,15 @@
       } )
       .then( () => toolbox.getTemplateFn("header", content.header) )
       .then( () => toolbox.getTemplateFn("section1-glyph", content.sections[0]) )
+      .then( () => {
+        const remEl = document.querySelector("section div div > p");
+        remEl.remove();
+      } )
       .then( () => toolbox.getTemplateFn("section2-glyph", content.sections[1]) )
+      .then( () => {
+        const remEl = document.querySelector("section div div > p");
+        remEl.remove();
+      } )
       .then( () => toolbox.getTemplateFn("section3", content.sections[2]) )
       .then( () => toolbox.getTemplateFn("section3", content.sections[3]) )
       .then(()=>

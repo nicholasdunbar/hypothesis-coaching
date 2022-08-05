@@ -81,7 +81,7 @@ function getHTMLContentFn(i){
     .then(response => loadHTMLContent (response));
 }
 function loadHTMLContent(html, contentObj){
-  const allSections = document.querySelectorAll('#template, #topnav, section, header');
+  const allSections = document.querySelectorAll('#template, #topnav, #section-container, header');
   const lastNode = allSections[allSections.length-1]; 
   const newNode = document.createElement('div');
   if (contentObj !== undefined){
@@ -89,6 +89,7 @@ function loadHTMLContent(html, contentObj){
       html = html.replaceAll(`{{${key}}}`, value);
     }
   }
+  newNode.id = "section-container";
   newNode.innerHTML = html;
   lastNode.after(newNode);
   let anchorEl;
@@ -112,26 +113,12 @@ function initHeader(h, p, l){
   header.querySelector('h1').innerHTML = h;
   header.querySelector('p').innerText = p;
 }
-//remove sections after n
-function clearSectionsAfter(n){
-  //clear unnecessary sections
-  var isFound = true;
-  var section;
-  section = document.querySelector("#section"+n);
-  while(document.body.contains(section)){
-    section.remove();
-    n++;
-    section = document.querySelector("#section"+n);
-  }
-}
 //replaces text in certain sections
 function initText(section, titleTxt, descriptionTxt, bodyTxt, glyphClass) {
   var titleEl = document.querySelector(section+" h1");
   var descriptionEl = document.querySelector(section+" h5");
   var bodyEl = document.querySelector(section+" p");
   var glyphEl = document.querySelector(section+" i");
-
-
   //update glyph class
   if (glyphEl != null){
     glyphEl.style.display = "inline-block";
@@ -188,7 +175,18 @@ function initNav(whichNavHighlight){
   initNavButtons(highlight);
 }
 //meta pixel code:
-!function(f,b,e,v,n,t,s)
+//insta pixel or old pixel
+// !function(f,b,e,v,n,t,s)
+//   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+//   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+//   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+//   n.queue=[];t=b.createElement(e);t.async=!0;
+//   t.src=v;s=b.getElementsByTagName(e)[0];
+//   s.parentNode.insertBefore(t,s)}(window, document,'script',
+//   'https://connect.facebook.net/en_US/fbevents.js');
+//   fbq('init', '312932777447892');
+//   fbq('track', 'PageView');
+  !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -196,7 +194,7 @@ function initNav(whichNavHighlight){
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '312932777447892');
+  fbq('init', '1202023500579533');
   fbq('track', 'PageView');
 //:end meta pixel code
 

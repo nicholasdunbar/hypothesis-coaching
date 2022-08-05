@@ -12,7 +12,10 @@
       .then( () => toolbox.getJSONFn("nafld"))
       .then( (obj) => {
         content = obj;
-        content.header.link = toolbox.getScheduleURL();
+        //default to standard call to action
+        if ('link' in content.header && content.header.link.length === 0){
+          content.header.link = toolbox.getScheduleURL();
+        }
       } )
       .then( () => toolbox.getTemplateFn("header", content.header) )
       .then( () => toolbox.getTemplateFn("section1-glyph", content.sections[0]) )

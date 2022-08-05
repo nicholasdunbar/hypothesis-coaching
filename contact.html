@@ -15,10 +15,10 @@
         content.header.link = toolbox.getScheduleURL();
       } )
       .then( () => toolbox.getTemplateFn("header", content.header) )
-      .then( () => toolbox.getTemplateFn("section1-glyph", content.sections[0]) )
+      .then( () => toolbox.getTemplateFn("section3", content.sections[0]) )
       .then(()=>
         {
-          //init toolbox
+          //init toolbox 
           toolbox.initPage();
           //set nav bar highlight
           toolbox.initNav("contact");

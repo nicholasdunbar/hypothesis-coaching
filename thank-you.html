@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Thank you - Health Coaching, Young Adult Career Coaching, and Life Coaching in Boulder, Denver - Hypothesis Coaching</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      import('./index.js')
+      .then( () => toolbox.getTemplateFn("main") )
+      .then(()=>
+        {
+          toolbox.initPage();
+          toolbox.initNav(undefined);
+          toolbox.initQuote("“Take action. An inch of movement will bring you closer to your goals than a mile of intention” – Steve Maraboli");
+          return toolbox.getHTMLContentFn("thank-you");
+        })
+      .then( () => {
+        //toolbox.fbq('track', 'thank-you-page');
+        console.log("load successful")
+      });
+    </script>
+  </head>
+<body>
+<div id="template"></div>
+<browser-refresh enabled="true"/> 
+</body>
+</html>
+    

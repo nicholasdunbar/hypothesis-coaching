@@ -189,6 +189,6 @@ function initNav(whichNavHighlight){
 //:end meta pixel code
 
 // export as Node module /  browser variable
-const toolbox = {initNav, initPage, getHTMLContentFn, getTemplateFn, getJSONFn, toggleMenu, initQuote, getScheduleURL};
+const toolbox = {initNav, initPage, getHTMLContentFn, getTemplateFn, getJSONFn, toggleMenu, initQuote, getScheduleURL, fbq};
 if (typeof exports === 'object' && typeof module !== 'undefined') module.exports = {toolbox};
 else window.toolbox = toolbox; 

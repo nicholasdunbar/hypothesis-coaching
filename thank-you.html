@@ -20,7 +20,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('assigned_to') != null){
           //log event with facebook
-          toolbox.fbq('track', 'Schedule');
+          toolbox.fbq('track', 'invitee_meeting_scheduled');
         }
         console.log("load successful")
       });

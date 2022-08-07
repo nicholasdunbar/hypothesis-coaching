@@ -17,10 +17,8 @@
         })
       .then( () => {
         // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-        const params = new Proxy(new URLSearchParams(window.location.search), {
-          get: (searchParams, prop) => searchParams.get(prop),
-        });
-        if ('assigned_to' in params){
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('assigned_to') != null){
           //log event with facebook
           toolbox.fbq('track', 'appointment-thank-you');
         }

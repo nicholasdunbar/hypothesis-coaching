@@ -20,7 +20,8 @@
         const params = new URLSearchParams(window.location.search);
         if (params.get('assigned_to') != null){
           //log event with facebook
-          toolbox.fbq('track', 'invitee_meeting_scheduled');
+          //calendly event - toolbox.fbq('track', 'invitee_meeting_scheduled');
+          toolbox.fbq('track', 'Schedule');
         }
         console.log("load successful")
       });

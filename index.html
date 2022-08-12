@@ -6,15 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
   <script>
+    var content = {};
     import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )
       .then(()=>
         {
+          //update template
           toolbox.initPage();
           toolbox.initNav(undefined);
           toolbox.initQuote("“Take action. An inch of movement will bring you closer to your goals than a mile of intention” – Steve Maraboli");
+          //load content html
           return toolbox.getHTMLContentFn("index");
         })
+      .then(()=> {
+        //update content html
+        let content = document.getElementById("schedule");
+        content.setAttribute('href', toolbox.getScheduleURL())
+      })
       .then( () => console.log("load successful"));
   </script>
 <head>

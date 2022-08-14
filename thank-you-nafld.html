@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!--general thank you page after an appointment has been made.-->
   <head>
-    <title>Thank You For Making an Appointment</title>
+    <title>Thank you - Health Coaching, Young Adult Career Coaching, and Life Coaching in Boulder, Denver - Hypothesis Coaching</title>
     <meta charset="UTF-8">
     <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,8 +12,8 @@
         {
           toolbox.initPage();
           toolbox.initNav(undefined);
-          toolbox.initQuote("“It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest.“ —Walter Anderson");
-          return toolbox.getHTMLContentFn("thank-you");
+          toolbox.initQuote("“Faith is taking the first step even when you don't see the whole staircase.” – Martin Luther King, Jr.");
+          return toolbox.getHTMLContentFn("thank-you-nafld");
         })
       .then( () => {
         // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
@@ -22,7 +21,7 @@
         if (params.get('assigned_to') != null){
           //log event with facebook
           //calendly event - toolbox.fbq('track', 'invitee_meeting_scheduled');
-          //toolbox.fbq('track', 'Schedule');
+          toolbox.fbq('track', 'Schedule');
         }
         console.log("load successful")
       });

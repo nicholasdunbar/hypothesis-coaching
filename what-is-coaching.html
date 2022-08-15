@@ -15,6 +15,15 @@
           toolbox.initQuote("“Take action. An inch of movement will bring you closer to your goals than a mile of intention” – Steve Maraboli");
           return toolbox.getHTMLContentFn("what-is-coaching");
         })
+      .then(  () => 
+        {
+          const params = new URLSearchParams(window.location.search);
+          //this is an ad campaign pass on the URL 
+          if (params.get('ad') != null){
+            let node = document.querySelector("#interestedBtn");
+            node.setAttribute('href',node.getAttribute('href')+window.location.search);
+          }
+        }) 
       .then( () => console.log("load successful"));
   </script>
   </head>

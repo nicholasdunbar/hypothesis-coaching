@@ -9,8 +9,8 @@ var getStartedURL = "https://calendly.com/hypothesiscoaching/15-minute-free-cons
 var baseURL = window.location.protocol+"//"+window.location.hostname;
 baseURL += window.location.port != 80 ? ':'+window.location.port : '';
 baseURL += "/";
-function getScheduleURL(){
-  return getStartedURL;
+function getScheduleURL(query = ""){
+  return getStartedURL+query;
 }
 //used to load css sheets dynamically
 function loadStyle(src) {

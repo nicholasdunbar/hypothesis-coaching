@@ -14,7 +14,13 @@
       }
       const isAll = list.reduce((prev,cur)=> prev && cur.checked);
       if(isAll){
-        window.location.href = toolbox.getScheduleURL()
+        const params = new URLSearchParams(window.location.search);
+        let query = "";
+        if (params.get('ad') != null){
+          //this is an ad campaign pass on the query URL
+          query = window.location.search;
+        }
+        window.location.href = toolbox.getScheduleURL(query)
         return;
       }
       window.location.href = "alternatives.html"

@@ -188,6 +188,17 @@ function initNav(whichNavHighlight){
   fbq('track', 'PageView');
 //:end meta pixel code
 
+//Google tag (gtag.js):
+import('https://www.googletagmanager.com/gtag/js?id=G-S2F3DW3DB3')
+.then( () => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S2F3DW3DB3');
+  console.log('google analytics loaded');  
+} )
+//:end Google tag (gtag.js)
+
 // export as Node module /  browser variable
 const toolbox = {initNav, initPage, getHTMLContentFn, getTemplateFn, getJSONFn, toggleMenu, initQuote, getScheduleURL, fbq};
 if (typeof exports === 'object' && typeof module !== 'undefined') module.exports = {toolbox};

@@ -17,12 +17,24 @@
         })
       .then(  () => 
         {
+          let node = document.querySelector("#interestedBtn");
+          let destination = node.getAttribute('href');
+          node.removeAttribute('href');
           const params = new URLSearchParams(window.location.search);
           //this is an ad campaign pass on the URL 
           if (params.get('ad') != null){
-            let node = document.querySelector("#interestedBtn");
-            node.setAttribute('href',node.getAttribute('href')+window.location.search);
-          }
+            destination = destination+window.location.search;
+          } 
+          node.addEventListener('click', (event) => {
+            toolbox.fbq('track','nafld_interested_btn');
+            toolbox.gtag('event', 'nafld_interested_btn', {
+           'event_callback':  () => window.location.href = destination
+           });
+           //backup GA
+           setTimeout(() => {
+              window.location.href = destination
+            }, 2000);
+          });
         }) 
       .then( () => console.log("load successful"));
   </script>

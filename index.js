@@ -188,18 +188,23 @@ function initNav(whichNavHighlight){
   fbq('track', 'PageView');
 //:end meta pixel code
 
+// export as Node module /  browser variable
+//define back up if gtag doesn't load
+var gtag = (type, name, settings) => {
+  settings.event_callback();
+};
+//set up module
+const toolbox = {initNav, initPage, getHTMLContentFn, getTemplateFn, getJSONFn, toggleMenu, initQuote, getScheduleURL, fbq, gtag};
 //Google tag (gtag.js):
-import('https://www.googletagmanager.com/gtag/js?id=G-S2F3DW3DB3')
+import('https://www.googletagmanager.com/gtag/js?id=G-0QNG5P2408')
 .then( () => {
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S2F3DW3DB3');
+  toolbox.gtag = function(){ dataLayer.push(arguments); }
+  toolbox.gtag('js', new Date());
+  toolbox.gtag('config', 'G-0QNG5P2408');
   console.log('google analytics loaded');  
 } )
+//https://developers.google.com/analytics/devguides/collection/gtagjs/sending-data
 //:end Google tag (gtag.js)
-
-// export as Node module /  browser variable
-const toolbox = {initNav, initPage, getHTMLContentFn, getTemplateFn, getJSONFn, toggleMenu, initQuote, getScheduleURL, fbq};
 if (typeof exports === 'object' && typeof module !== 'undefined') module.exports = {toolbox};
 else window.toolbox = toolbox; 

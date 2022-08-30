@@ -6,6 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     function validate(){
+      let query = "";
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('ad') != null){
+        //this is an ad campaign pass on the query URL
+        query = window.location.search;
+      }
       const inputs = document.querySelectorAll('input');
       const list = [true, ...inputs];
       if (!list[1].checked){
@@ -14,16 +20,28 @@
       }
       const isAll = list.reduce((prev,cur)=> prev && cur.checked);
       if(isAll){
-        const params = new URLSearchParams(window.location.search);
-        let query = "";
-        if (params.get('ad') != null){
-          //this is an ad campaign pass on the query URL
-          query = window.location.search;
-        }
-        window.location.href = toolbox.getScheduleURL(query)
+        toolbox.fbq('track','redrope_success');
+        toolbox.gtag('event', 'redrope_success', {
+          'event_callback': function() {
+            window.location.href = toolbox.getScheduleURL(query);
+          }
+        });
+        //back up if GA fails
+        setTimeout(() => {
+          window.location.href = toolbox.getScheduleURL(query);
+        }, 2000);
         return;
       }
-      window.location.href = "alternatives.html"
+      toolbox.fbq('track','redrope_fail');
+      toolbox.gtag('event', 'redrope_fail', {
+        'event_callback': function() {
+          window.location.href = "alternatives.html"+query;
+        }
+      });
+      //back up if GA fails
+      setTimeout(() => {
+        window.location.href = "alternatives.html"+query;
+      }, 2000);
     }
     import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )

@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
+    let query = "";
+    function jumpToConvertPage(time){
+       setTimeout(() => {
+          window.location.href = toolbox.getScheduleURL(query);
+        }, time);
+    }
     function validate(){
-      let query = "";
       const params = new URLSearchParams(window.location.search);
       if (params.get('ad') != null){
         //this is an ad campaign pass on the query URL
@@ -23,25 +28,22 @@
         toolbox.fbq('track','redrope_success');
         toolbox.gtag('event', 'redrope_success', {
           'event_callback': function() {
-            window.location.href = toolbox.getScheduleURL(query);
+            jumpToConvertPage(100);
           }
         });
-        //back up if GA fails
-        setTimeout(() => {
-          window.location.href = toolbox.getScheduleURL(query);
-        }, 2000);
+       
         return;
       }
       toolbox.fbq('track','redrope_fail');
       toolbox.gtag('event', 'redrope_fail', {
         'event_callback': function() {
-          window.location.href = "alternatives.html"+query;
+          setTimeout(() => {
+            window.location.href = "alternatives.html"+query;
+          }, 100);
         }
       });
       //back up if GA fails
-      setTimeout(() => {
-        window.location.href = "alternatives.html"+query;
-      }, 2000);
+      jumpToConvertPage(3000);
     }
     import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )

@@ -201,9 +201,15 @@ import('https://www.googletagmanager.com/gtag/js?id=G-0QNG5P2408')
   window.dataLayer = window.dataLayer || [];
   toolbox.gtag = function(){ dataLayer.push(arguments); }
   toolbox.gtag('js', new Date());
-  toolbox.gtag('config', 'G-0QNG5P2408');
-  console.log('google analytics loaded');  
+  //configure using query string from URL
+  const params = new URLSearchParams(window.location.search);
+  let configObj;
+  (params.get('debug') == 'true') ? configObj = { 'debug_mode':true } : configObj = {};
+  toolbox.gtag('config', 'G-0QNG5P2408', configObj); 
+  console.log('google analytics loaded');
+  //:end Google tag (gtag.js)
 } ).then(
+  //Google tagmanager
    () => {
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -211,10 +217,12 @@ import('https://www.googletagmanager.com/gtag/js?id=G-0QNG5P2408')
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WN37N2B');
    } 
+  //:end Google tagmanager
 ).then( () => {
   console.log('google tag manager loaded');
 } )
+//how to use toolbox.gtag()
 //https://developers.google.com/analytics/devguides/collection/gtagjs/sending-data
-//:end Google tag (gtag.js)
+
 if (typeof exports === 'object' && typeof module !== 'undefined') module.exports = {toolbox};
 else window.toolbox = toolbox; 

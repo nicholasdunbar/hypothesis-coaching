@@ -6,6 +6,21 @@
   <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
+    // Replace the 'ytplayer' element with an <iframe> and
+    // YouTube player after the API code downloads.
+    var player;
+    function onYouTubePlayerAPIReady() {
+      player = new YT.Player('ytplayer', {
+        height: '315',
+        width: '560',
+        videoId: 'kWPKp0hQozw',
+        playerVars: {
+            'playsinline': 1
+        }
+      });
+    }
+
+        
     import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )
       .then(()=>
@@ -15,8 +30,16 @@
           toolbox.initQuote("“Take action. An inch of movement will bring you closer to your goals than a mile of intention” – Steve Maraboli");
           return toolbox.getHTMLContentFn("what-is-coaching");
         })
+      .then(  () => {
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      } )
       .then(  () => 
         {
+          //set up click events on buttons
           let node = document.querySelector("#interestedBtn");
           let destination = node.getAttribute('href');
           node.removeAttribute('href');

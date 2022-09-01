@@ -6,6 +6,8 @@
     <meta name="description" content="Science based health coaching specializing in weightloss, NAFLD, Depression, and Career Coaching for young adults.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
+      //get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+      const params = new URLSearchParams(window.location.search);
       import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )
       .then(()=>
@@ -16,12 +18,13 @@
           return toolbox.getHTMLContentFn("thank-you-nafld");
         })
       .then( () => {
-        // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
-        const params = new URLSearchParams(window.location.search);
+        //if it comes from calendly then track event
         if (params.get('assigned_to') != null){
           //log event with facebook
           //calendly event - toolbox.fbq('track', 'invitee_meeting_scheduled');
           toolbox.fbq('track', 'Schedule');
+          //log event on GA
+          toolbox.gtag('event', 'generate_lead');
         }
         console.log("load successful")
       });

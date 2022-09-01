@@ -21,19 +21,24 @@
           let destination = node.getAttribute('href');
           node.removeAttribute('href');
           const params = new URLSearchParams(window.location.search);
-          //this is an ad campaign pass on the URL 
+          //this came from an ad campaign, so pass on the query string and track 
           if (params.get('ad') != null){
             destination = destination+window.location.search;
-          } 
+            node.addEventListener('click', (event) => {
+              toolbox.fbq('track','nafld_interested_btn');
+              toolbox.gtag('event', 'nafld_interested_btn', {
+            'event_callback':  () => window.location.href = destination
+            });
+            //backup GA
+            setTimeout(() => {
+                window.location.href = destination;
+              }, 3000);
+            });
+            return;
+          }
+          //this is not coming from an ad so don't track 
           node.addEventListener('click', (event) => {
-            toolbox.fbq('track','nafld_interested_btn');
-            toolbox.gtag('event', 'nafld_interested_btn', {
-           'event_callback':  () => window.location.href = destination
-           });
-           //backup GA
-           setTimeout(() => {
-              window.location.href = destination
-            }, 2000);
+            window.location.href = destination;
           });
         }) 
       .then( () => console.log("load successful"));

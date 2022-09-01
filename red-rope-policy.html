@@ -6,45 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script>
     let query = "";
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('ad') != null){
+      //this is an ad campaign pass on the query URL
+      query = window.location.search;
+    }
+
     function jumpToConvertPage(time){
        setTimeout(() => {
           window.location.href = toolbox.getScheduleURL(query);
         }, time);
     }
-    function validate(){
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('ad') != null){
-        //this is an ad campaign pass on the query URL
-        query = window.location.search;
-      }
+    function validate(){  
       const inputs = document.querySelectorAll('input');
       const list = [true, ...inputs];
+      //if first box not checked then they didn't read instructions
       if (!list[1].checked){
         alert('Please check the boxes to continue.');
         return;
       }
+      //are all boxes checked?
       const isAll = list.reduce((prev,cur)=> prev && cur.checked);
-      if(isAll){
+      //if all checked and traffic comes from an ad
+      if (isAll && params.get('ad') != null) {
         toolbox.fbq('track','redrope_success');
         toolbox.gtag('event', 'redrope_success', {
           'event_callback': function() {
             jumpToConvertPage(100);
           }
         });
-       
         return;
       }
-      toolbox.fbq('track','redrope_fail');
-      toolbox.gtag('event', 'redrope_fail', {
-        'event_callback': function() {
-          setTimeout(() => {
-            window.location.href = "alternatives.html"+query;
-          }, 100);
-        }
-      });
-      //back up if GA fails
-      jumpToConvertPage(3000);
+      //if all checked and traffic doesn't come from an ad
+      if (isAll) {
+        jumpToConvertPage(100);
+        return;
+      }
+      //if not all checked but does come from an ad
+      if (params.get('ad') != null) {
+        toolbox.fbq('track','redrope_fail');
+        toolbox.gtag('event', 'redrope_fail', {
+          'event_callback': function() {
+            setTimeout(() => {
+              window.location.href = "alternatives.html"+query;
+            }, 100);
+          }
+        });
+        //back up if GA fails
+        setTimeout(() => {
+          window.location.href = "alternatives.html"+query;
+        }, 3000);
+        return;
+      }
+      //if not all checked and not and ad
+      setTimeout(() => {
+          window.location.href = "alternatives.html"+query;
+      }, 100);
     }
+    
     import('./index.js')
       .then( () => toolbox.getTemplateFn("main") )
       .then(()=>

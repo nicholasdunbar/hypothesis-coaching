@@ -1,2 +1,0 @@
-# hypothesis-coaching
-personal website

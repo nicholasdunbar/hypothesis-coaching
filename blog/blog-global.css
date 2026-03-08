@@ -5,6 +5,16 @@
     margin: 0 0 1em;
 }
 
+/* allow long words/urls inside articles (eg. bibliography links) to wrap
+   rather than stretching the page horizontally */
+article,
+article * {
+    /* overflow-wrap is the modern property, word-wrap synonym supported
+       by older browsers */
+    overflow-wrap: anywhere;
+    word-break: break-word; /* allows breaks inside words/URLs */
+}
+
 /* ensure anchored headings are visible below sticky nav */
 .toc-anchor {
     display: block;

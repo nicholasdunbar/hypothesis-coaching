@@ -1,0 +1,50 @@
+/* hero override for the "How to Stop Stress Eating at Night" article */
+#hero {
+    background-image: url('img/how-to-stop-stress-eating-at-night.jpg');
+    background-size: auto 607px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 607px;
+    width: 100%;
+}
+
+/* ensure hero text lines stack tightly and are centered vertically */
+#hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* keep left alignment */
+    gap: 2em; /* space between heading and paragraph */
+}
+#hero-text > h1,
+#hero-text > p {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    #hero {
+        background-image: none;
+        background: linear-gradient(0deg, var(--color-0) 0%, var(--color-1) 100%);
+    }
+}
+
+/* clear floats before each new section heading */
+h2 {
+    clear: both;
+}
+
+/* float Instagram embed and allow surrounding text to wrap */
+.instagram-wrapper {
+    float: right;
+    margin: 0 0 1em 1em;
+    max-width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .instagram-wrapper {
+        float: none;
+        margin: 0 auto 1em;
+        max-width: 100%;
+    }
+}

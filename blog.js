@@ -1,0 +1,6 @@
+(async()=>{let e=[];try{var t=await fetch("/blog/blog-article-list.json");e=await t.json()}catch(e){return!console.error("failed to load blog list",e)}let i=document.getElementById("blog-articles");if(i){t=window.location.pathname.replace(/\/index\.html$/,"").replace(/\/$/,"");let r=""===t||"/"===t;var t=r?e.slice(0,3):e,l=document.getElementById("blog-article-template");let c=l?l.innerHTML:"";c=c.replace(/\.\.\/(\{\{HREF\}\})/g,"$1").replace(/\.\.\/(\{\{IMG_SRC\}\})/g,"$1"),t.forEach(e=>{var t,l=(l=e.href)?!/^(https?:)?\/\//i.test(l)&&!l.startsWith("/")&&r?"blog/"+l:l:"#",a=e.img.replace(/(\.[^.]+)$/,"-thumb$1"),a=(a=a)?!/^(https?:)?\/\//i.test(a)&&!a.startsWith("/")&&!r&&a.startsWith("blog/")?"../"+a:a:"";c?(t=c.replace(/{{IMG_SRC}}/g,a).replace(/{{TITLE}}/g,e.title).replace(/{{DESCRIPTION}}/g,e.description).replace(/{{HREF}}/g,l),i.insertAdjacentHTML("beforeend",t)):((t=document.createElement("div")).className="blog-article",t.innerHTML=`
+                <img src="${a}" alt="${e.title}" class="blog-image" />
+                <h2 class="blog-title">${e.title}</h2>
+                <p class="blog-blurb">${e.description}</p>
+                <a href="${l}" class="read-more cta-button">Read More</a>
+            `,i.appendChild(t))})}})();

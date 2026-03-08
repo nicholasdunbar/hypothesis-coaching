@@ -1,0 +1,14 @@
+/* shared blog article styles */
+.byline {
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 0 0 1em;
+}
+
+/* ensure anchored headings are visible below sticky nav */
+.toc-anchor {
+    display: block;
+    position: relative;
+    top: -80px; /* adjust to height of sticky nav */
+    visibility: hidden;
+}

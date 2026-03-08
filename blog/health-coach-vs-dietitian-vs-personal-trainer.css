@@ -1,0 +1,30 @@
+/* hero override for the "Health Coach vs. Dietitian vs. Personal Trainer" article */
+#hero {
+    background-image: url('img/health-coach-vs-dietitian-vs-personal-trainer.jpg');
+    background-size: auto 607px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    height: 607px;
+    width: 100%;
+}
+
+/* ensure hero text lines stack tightly and are centered vertically */
+#hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* keep left alignment */
+    gap: 2em; /* space between heading and paragraph */
+}
+#hero-text > h1,
+#hero-text > p {
+    margin: 0;
+    padding: 0;
+}
+
+@media only screen and (max-width: 800px) {
+    #hero {
+        background-image: none;
+        background: linear-gradient(0deg, var(--color-0) 0%, var(--color-1) 100%);
+    }
+}
